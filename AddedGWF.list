@@ -1,5 +1,8 @@
 ################ 自定义clash规则转换托管地址
 DOMAIN-SUFFIX,id9.cc
 
+#魔戒
+DOMAIN-KEYWORD,mojie
+
 # 谷歌EMTON
 DOMAIN-SUFFIX,keeflys.com
