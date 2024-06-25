@@ -20,6 +20,7 @@ DOMAIN-SUFFIX,greasyfork.org
 
 DOMAIN-SUFFIX,apkpure.net
 
-DOMAIN-SUFFIX,x.com
+#完全匹配域名，例如 
+DOMAIN,x.com
 
 DOMAIN-SUFFIX,freezhihu.org
