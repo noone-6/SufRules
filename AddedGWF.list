@@ -46,3 +46,6 @@ DOMAIN-SUFFIX,f-droid.org
 #surge网站
 DOMAIN-SUFFIX,nssurge.com
 
+#机场转换
+DOMAIN-SUFFIX, v1.mk
+
