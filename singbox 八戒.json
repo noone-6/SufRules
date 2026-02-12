@@ -1,0 +1,360 @@
+{
+    "dns": {
+        "independent_cache": true,
+        "rules": [
+            {
+                "action": "predefined",
+                "rule_set": [
+                    "AdGuardSDNSFilter",
+                    "chrome-doh"
+                ]
+            },
+            {
+                "action": "predefined",
+                "query_type": "HTTPS"
+            },
+            {
+                "query_type": [
+                    "A",
+                    "AAAA"
+                ],
+                "rewrite_ttl": 1,
+                "server": "fakeip"
+            },
+            {
+                "clash_mode": "global",
+                "server": "remote"
+            },
+            {
+                "clash_mode": "direct",
+                "server": "local"
+            },
+            {
+                "rule_set": "geosite-cn",
+                "server": "local"
+            },
+            {
+                "rule_set": "ext-cn-domain",
+                "server": "local"
+            }
+        ],
+        "servers": [
+            {
+                "detour": "select",
+                "server": "8.8.8.8",
+                "tag": "remote",
+                "type": "https"
+            },
+            {
+                "server": "223.5.5.5",
+                "tag": "local",
+                "type": "https"
+            },
+            {
+                "inet4_range": "198.18.0.0/15",
+                "inet6_range": "fc00::/18",
+                "tag": "fakeip",
+                "type": "fakeip"
+            }
+        ],
+        "strategy": "prefer_ipv4"
+    },
+    "experimental": {
+        "cache_file": {
+            "enabled": true
+        },
+        "clash_api": {
+            "external_controller": "127.0.0.1:9090",
+            "secret": ""
+        }
+    },
+    "inbounds": [
+        {
+        "address": [
+        "172.19.0.1/30",
+        "fdfe:dcba:9876::1/126"
+        ],
+        "mtu": 9000,
+        "stack": "system",
+        "auto_route": true,
+        "endpoint_independent_nat": true,
+        "strict_route": true,
+        "type": "tun",
+        "include_package": [
+        "com.apkpure.aegon",
+        "com.brave.browser",
+        "com.openai.chatgpt",
+        "com.android.chrome",
+        "com.google.android.googlequicksearchbox",
+        "com.android.vending",
+        "com.google.android.gms",
+        "com.google.android.gsf",
+        "org.schabi.newpipe",
+        "app.rvx.android.youtube",
+        "com.revanced.net.revancedmanager",
+        "com.readdle.spark",
+        "mark.via.gp",
+        "com.google.android.youtube",
+        "app.revanced.android.youtube",
+        "app.revanced.android.gms"
+        ]
+        }
+    ],
+
+    "log": {},
+    "outbounds": [
+        {
+            "tag": "select",
+            "type": "selector",
+            "outbounds": [
+                "urltest",
+                "🇭🇰香港-Gemini-IEPL",
+                "🇭🇰香港2-IEPL",
+                "🇹🇼台湾-IEPL",
+                "🇹🇼台湾2-IEPL",
+                "🇸🇬新加坡-Gemini-IEPL",
+                "🇸🇬新加坡2-Gemini-IEPL",
+                "🇯🇵日本-IEPL-GPT",
+                "🇯🇵日本2-IEPL-GPT",
+                "🇯🇵日本3-IEPL-家宽",
+                "🇺🇸美国-IEPL-GPT",
+                "🇺🇸美国2-IEPL-GPT",
+                "🇻🇳越南-IEPL",
+                "🇮🇩印尼-IEPL",
+                "🇩🇪德国-IEPL"
+            ],
+            "default": "🇯🇵日本-IEPL-GPT"
+        },
+        {
+            "tag": "urltest",
+            "type": "urltest",
+            "outbounds": [
+                "🇭🇰香港-Gemini-IEPL",
+                "🇭🇰香港2-IEPL",
+                "🇹🇼台湾-IEPL",
+                "🇹🇼台湾2-IEPL",
+                "🇸🇬新加坡-Gemini-IEPL",
+                "🇸🇬新加坡2-Gemini-IEPL",
+                "🇯🇵日本-IEPL-GPT",
+                "🇯🇵日本2-IEPL-GPT",
+                "🇯🇵日本3-IEPL-家宽",
+                "🇺🇸美国-IEPL-GPT",
+                "🇺🇸美国2-IEPL-GPT",
+                "🇻🇳越南-IEPL",
+                "🇮🇩印尼-IEPL",
+                "🇩🇪德国-IEPL"
+            ]
+        },
+        {
+            "password": "72bd5adb-ca33-4a80-80c0-19c0db594a29",
+            "server": "gd.bjnet2.com",
+            "server_port": 36602,
+            "tag": "🇭🇰香港-Gemini-IEPL",
+            "type": "shadowsocks",
+            "method": "aes-128-gcm",
+            "plugin": "obfs-local",
+            "plugin_opts": "obfs=http;obfs-host=acbf3e30f7e6f5cbc6e429cca5de7b77.baidu.com"
+        },
+        {
+            "password": "72bd5adb-ca33-4a80-80c0-19c0db594a29",
+            "server": "gd2.bjnet2.com",
+            "server_port": 36602,
+            "tag": "🇭🇰香港2-IEPL",
+            "type": "shadowsocks",
+            "method": "aes-128-gcm",
+            "plugin": "obfs-local",
+            "plugin_opts": "obfs=http;obfs-host=acbf3e30f7e6f5cbc6e429cca5de7b77.baidu.com"
+        },
+        {
+            "password": "72bd5adb-ca33-4a80-80c0-19c0db594a29",
+            "server": "gd.bjnet2.com",
+            "server_port": 36603,
+            "tag": "🇹🇼台湾-IEPL",
+            "type": "shadowsocks",
+            "method": "aes-128-gcm",
+            "plugin": "obfs-local",
+            "plugin_opts": "obfs=http;obfs-host=acbf3e30f7e6f5cbc6e429cca5de7b77.baidu.com"
+        },
+        {
+            "password": "72bd5adb-ca33-4a80-80c0-19c0db594a29",
+            "server": "gd2.bjnet2.com",
+            "server_port": 36603,
+            "tag": "🇹🇼台湾2-IEPL",
+            "type": "shadowsocks",
+            "method": "aes-128-gcm",
+            "plugin": "obfs-local",
+            "plugin_opts": "obfs=http;obfs-host=acbf3e30f7e6f5cbc6e429cca5de7b77.baidu.com"
+        },
+        {
+            "password": "72bd5adb-ca33-4a80-80c0-19c0db594a29",
+            "server": "gd.bjnet2.com",
+            "server_port": 36604,
+            "tag": "🇸🇬新加坡-Gemini-IEPL",
+            "type": "shadowsocks",
+            "method": "aes-128-gcm",
+            "plugin": "obfs-local",
+            "plugin_opts": "obfs=http;obfs-host=acbf3e30f7e6f5cbc6e429cca5de7b77.baidu.com"
+        },
+        {
+            "password": "72bd5adb-ca33-4a80-80c0-19c0db594a29",
+            "server": "gd2.bjnet2.com",
+            "server_port": 36604,
+            "tag": "🇸🇬新加坡2-Gemini-IEPL",
+            "type": "shadowsocks",
+            "method": "aes-128-gcm",
+            "plugin": "obfs-local",
+            "plugin_opts": "obfs=http;obfs-host=acbf3e30f7e6f5cbc6e429cca5de7b77.baidu.com"
+        },
+        {
+            "password": "72bd5adb-ca33-4a80-80c0-19c0db594a29",
+            "server": "gd.bjnet2.com",
+            "server_port": 36609,
+            "tag": "🇯🇵日本-IEPL-GPT",
+            "type": "shadowsocks",
+            "method": "aes-128-gcm",
+            "plugin": "obfs-local",
+            "plugin_opts": "obfs=http;obfs-host=acbf3e30f7e6f5cbc6e429cca5de7b77.baidu.com"
+        },
+        {
+            "password": "72bd5adb-ca33-4a80-80c0-19c0db594a29",
+            "server": "gd2.bjnet2.com",
+            "server_port": 36609,
+            "tag": "🇯🇵日本2-IEPL-GPT",
+            "type": "shadowsocks",
+            "method": "aes-128-gcm",
+            "plugin": "obfs-local",
+            "plugin_opts": "obfs=http;obfs-host=acbf3e30f7e6f5cbc6e429cca5de7b77.baidu.com"
+        },
+        {
+            "password": "72bd5adb-ca33-4a80-80c0-19c0db594a29",
+            "server": "gd2.bjnet2.com",
+            "server_port": 36610,
+            "tag": "🇯🇵日本3-IEPL-家宽",
+            "type": "shadowsocks",
+            "method": "aes-128-gcm",
+            "plugin": "obfs-local",
+            "plugin_opts": "obfs=http;obfs-host=acbf3e30f7e6f5cbc6e429cca5de7b77.baidu.com"
+        },
+        {
+            "password": "72bd5adb-ca33-4a80-80c0-19c0db594a29",
+            "server": "gd.bjnet2.com",
+            "server_port": 36608,
+            "tag": "🇺🇸美国-IEPL-GPT",
+            "type": "shadowsocks",
+            "method": "aes-128-gcm",
+            "plugin": "obfs-local",
+            "plugin_opts": "obfs=http;obfs-host=acbf3e30f7e6f5cbc6e429cca5de7b77.baidu.com"
+        },
+        {
+            "password": "72bd5adb-ca33-4a80-80c0-19c0db594a29",
+            "server": "gd2.bjnet2.com",
+            "server_port": 36608,
+            "tag": "🇺🇸美国2-IEPL-GPT",
+            "type": "shadowsocks",
+            "method": "aes-128-gcm",
+            "plugin": "obfs-local",
+            "plugin_opts": "obfs=http;obfs-host=acbf3e30f7e6f5cbc6e429cca5de7b77.baidu.com"
+        },
+        {
+            "password": "72bd5adb-ca33-4a80-80c0-19c0db594a29",
+            "server": "gd.bjnet2.com",
+            "server_port": 36606,
+            "tag": "🇻🇳越南-IEPL",
+            "type": "shadowsocks",
+            "method": "aes-128-gcm",
+            "plugin": "obfs-local",
+            "plugin_opts": "obfs=http;obfs-host=acbf3e30f7e6f5cbc6e429cca5de7b77.baidu.com"
+        },
+        {
+            "password": "72bd5adb-ca33-4a80-80c0-19c0db594a29",
+            "server": "gd.bjnet2.com",
+            "server_port": 36607,
+            "tag": "🇮🇩印尼-IEPL",
+            "type": "shadowsocks",
+            "method": "aes-128-gcm",
+            "plugin": "obfs-local",
+            "plugin_opts": "obfs=http;obfs-host=acbf3e30f7e6f5cbc6e429cca5de7b77.baidu.com"
+        },
+        {
+            "password": "72bd5adb-ca33-4a80-80c0-19c0db594a29",
+            "server": "gd.bjnet2.com",
+            "server_port": 36611,
+            "tag": "🇩🇪德国-IEPL",
+            "type": "shadowsocks",
+            "method": "aes-128-gcm",
+            "plugin": "obfs-local",
+            "plugin_opts": "obfs=http;obfs-host=acbf3e30f7e6f5cbc6e429cca5de7b77.baidu.com"
+        },
+        {
+            "tag": "direct",
+            "type": "direct"
+        }
+    ],
+    "route": {
+        "auto_detect_interface": true,
+        "default_domain_resolver": {
+            "server": "local"
+        },
+        "rule_set": [
+            {
+                "format": "binary",
+                "tag": "geoip-cn",
+                "type": "remote",
+                "url": "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs"
+            },
+            {
+                "format": "binary",
+                "tag": "geosite-cn",
+                "type": "remote",
+                "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/geolocation-cn.srs"
+            },
+            {
+                "format": "binary",
+                "tag": "AdGuardSDNSFilter",
+                "type": "remote",
+                "url": "https://raw.githubusercontent.com/xmdhs/sing-box-ruleset/rule-set/AdGuardSDNSFilterSingBox.srs"
+            },
+            {
+                "format": "source",
+                "tag": "chrome-doh",
+                "type": "remote",
+                "url": "https://gist.githubusercontent.com/xmdhs/71fc5ff6ef29f5ecaf2c52b8de5c3172/raw/chrome-doh.json"
+            },
+            {
+                "format": "binary",
+                "tag": "ext-cn-domain",
+                "type": "remote",
+                "url": "https://raw.githubusercontent.com/xmdhs/cn-domain-list/rule-set/ext-cn-list.srs"
+            }
+        ],
+        "rules": [
+            {
+                "action": "sniff"
+            },
+            {
+                "action": "hijack-dns",
+                "protocol": "dns"
+            },
+            {
+                "action": "resolve",
+                "strategy": "prefer_ipv4"
+            },
+            {
+                "clash_mode": "direct",
+                "outbound": "direct"
+            },
+            {
+                "clash_mode": "global",
+                "outbound": "select"
+            },
+            {
+                "ip_is_private": true,
+                "outbound": "direct"
+            },
+            {
+                "outbound": "direct",
+                "rule_set": "geoip-cn"
+            }
+        ]
+    }
+}
