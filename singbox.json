@@ -28,6 +28,7 @@
     }
   ],
   "log": { "level": "error", "timestamp": true },
+  
   "dns": {
     "servers": [
       {
@@ -48,15 +49,19 @@
       { "clash_mode": [ "Direct" ], "query_type": [ "A", "AAAA" ], "server": "dns_direct" },
       { "clash_mode": [ "Global" ], "query_type": [ "A", "AAAA" ], "server": "dns_proxy" },
       { "rule_set": [ "ads" ], "action": "predefined" },
-      { "domain": [ "services.googleapis.cn" ], "query_type": [ "A", "AAAA" ], "server": "dns_fakeip" },
-      { "rule_set": [ "trackerslist", "private", "cn" ], "query_type": [ "A", "AAAA" ], "server": "dns_direct", "rewrite_ttl": 1 },
-      { "query_type": [ "A", "AAAA" ], "server": "dns_fakeip" }
+      { "rule_set": [ "microsoft-cn", "apple-cn", "google-cn", "games-cn" ], "query_type": [ "A", "AAAA" ], "server": "dns_direct", "rewrite_ttl": 1 },
+      { "rule_set": [ "proxy" ], "query_type": [ "A", "AAAA" ], "server": "dns_fakeip" },
+      { "rule_set": [ "private", "cn" ], "query_type": [ "A", "AAAA" ], "server": "dns_direct", "rewrite_ttl": 1 }
     ],
-    "final": "dns_direct",
+    "final": "dns_proxy",
     "strategy": "prefer_ipv4",
     "independent_cache": true,
-    "reverse_mapping": true
-  },
+    "reverse_mapping": true,
+    // 推荐将 `client_subnet` 设置为当前宽带运营商分配的默认 DNS 的 IP 段
+    "client_subnet": "211.137.58.0/24"
+  }
+},
+
   "inbounds": [
     // 启动服务时如果出现 `tun-in` 报错，可将 `"stack": "mixed"` 修改为 `"stack": "system"`
     { "tag": "tun-in", "type": "tun", "interface_name": "sing-box", "address": [ "172.18.0.1/30", "fdfe:dcba:9876::1/126" ], "auto_route": true, "strict_route": true, "stack": "mixed" }
