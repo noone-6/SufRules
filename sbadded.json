@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "rules": [
+    {
+      "domain": [
+        "mtalk.google.com"
+      ],
+      "domain_suffix": [
+        "mtalk.google.com"
+      ]
+    }
+  ]
+}
