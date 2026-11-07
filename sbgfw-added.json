@@ -1,0 +1,40 @@
+{
+  "version": 2,
+  "rules": [
+    {
+      "domain": [
+        "sponsor.ajay.app"
+      ]
+      ,
+      "domain_keyword": [
+        "google",
+        "mojie"
+        ,"bajie"
+        ,"bitwarden"
+        ,"ilovepdf"
+        ,"notion"
+        ,"embywiki"
+      ]
+      ,
+      "domain_suffix": [
+        "sponsor.ajay.app"
+        ,"ngstr-lra8j.com"
+        ,"play.googleapis.com"
+        ,"play-fe.googleapis.com"
+        ,"services.googleapis.cn"
+        ,"id9.cc"
+        ,"keeflys.com"
+        ,"apkpure.net"
+        ,"notion.so"
+        ,"cpu-monkey.com"
+        ,"f-droid.org"
+        ,"nssurge.com"
+        ,"v1.mk"
+        ,"v2rayssr.com"
+        ,"digitalplat.org"
+        ,"apps.apple.com"
+        ,"onlyfans.com"
+      ]
+    }
+  ]
+}
