@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "rules": [
+    {
+      "domain_suffix": [
+        ".amazon.com"
+        ,".oracle.com"
+        ,".walkerpok.qzz.io"
+      ]
+      ,
+      "domain_keyword": [
+        "amazon"
+        ,"oracle"
+        ,".walkerpok.qzz.io"
+      ]
+    }
+  ]
+}
