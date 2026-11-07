@@ -5,11 +5,27 @@
       "domain_suffix": [
         ".amazon.com"
         ,".oracle.com"
+        ,"wechat.com",
+        "weixin.qq.com",
+        "weixinbridge.com",
+        "weixinsxy.com",
+        "servicewechat.com",
+        "wx.qq.com",
+        "wx.gtimg.com",
+        "wxs.qq.com",
+        "qpic.cn",
+        "qlogo.cn",
+        "tc.qq.com",
+        "tenpay.com",
+        "iot-tencent.com",
+        " apdcdn.tc.qq.com"
       ]
       ,
       "domain_keyword": [
         "amazon"
         ,"oracle"
+        ,"wechat",
+        "weixin"
       ]
     }
   ]
