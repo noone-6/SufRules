@@ -1,1 +1,15 @@
 
+{
+  "version": 2,
+  "rules": [
+    {
+      "domain_suffix": [
+        ".walkerpok.qzz.io"
+      ]
+      ,
+      "domain_keyword": [
+        ".walkerpok.qzz.io"
+      ]
+    }
+  ]
+}
