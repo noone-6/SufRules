@@ -4,11 +4,13 @@
   "rules": [
     {
       "domain_suffix": [
-        ".walker.new.tg"
+        ".walker.new.tg",
+        ".walker.sarl"
       ]
       ,
       "domain_keyword": [
-        ".walker.new.tg"
+        ".walker.new.tg",
+        ".walker.sarl"
       ]
     }
   ]
